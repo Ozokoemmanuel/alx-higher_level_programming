@@ -9,8 +9,8 @@ def add_integer(a, b=98):
         @b: second integer, default is 98
     """
 
-    if type(a) is not int:
+    if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
-    if type(b) is not int:
+    if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
     return int(a) + int(b)
