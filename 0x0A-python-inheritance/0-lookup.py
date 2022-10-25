@@ -4,5 +4,7 @@
 
 
 def lookup(obj):
-    """ Defines the object"""
+    """ Defines the object
+    dir(): returns a list of attributes and methods of any object
+    """
     return dir(obj)
