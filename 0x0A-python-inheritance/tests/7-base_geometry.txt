@@ -42,47 +42,41 @@ Checking for integer == 0:
 	ValueError: integer must be greater than 0
 
 Checking for integer < 0:
-	>>> b.integer_validator("integer", -1)
+	>>> b.integer_validator("integer", -5)
 	Traceback (most recent call last):
-	...
-	ValueError: integer must be greater than 0
+        ...
+        ValueError: integer must be greater than 0
+
 
 Checking for non-integer types:
 	>>> b.integer_validator("bool", True)
 	Traceback (most recent call last):
 	...
 	TypeError: bool must be an integer
-	
 	>>> b.integer_validator("float", 1.2)
 	Traceback (most recent call last):
 	...
 	TypeError: float must be an integer
-
 	>>> b.integer_validator("complex", complex(1, 1))
 	Traceback (most recent call last):
 	...
 	TypeError: complex must be an integer
-
-	>>> b.integer_validator("string", hello)
+	>>> b.integer_validator("string", "hello")
 	Traceback (most recent call last):
 	...
 	TypeError: string must be an integer
-
 	>>> b.integer_validator("tuple", (1, 2))
 	Traceback (most recent call last):
 	...
 	TypeError: tuple must be an integer
-
 	>>> b.integer_validator("list", [1, 2, 3, 4])
 	Traceback (most recent call last):
 	...
 	TypeError: list must be an integer
-
-	>>> b.integer_validator("dict", {key: value})
+	>>> b.integer_validator("dict", {"key": "value"})
 	Traceback (most recent call last):
 	...
 	TypeError: dict must be an integer
-
 	>>> b.integer_validator("set", {"hello", "world"})
 	Traceback (most recent call last):
 	...
@@ -98,10 +92,10 @@ Checking for for 1 argument to integer_validator:
 	>>> b.integer_validator("name")
 	Traceback (most recent call last):
 	...
-	ValueError: integer_validator() missing 1 required postitional argument: 'value'
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 Checking for too many arguments:
 	>>> b.integer_validator("integer", 1, 2)
 	Traceback (most recent call last):
 	...
-	TypeError: integer_validator() takes 3 postitional arguments but 4 were given
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
